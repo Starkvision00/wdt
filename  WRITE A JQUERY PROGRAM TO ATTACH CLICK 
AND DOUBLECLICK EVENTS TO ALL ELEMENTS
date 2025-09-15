@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Click and Double Click</title>
+ <script 
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></scri
+pt>
+ <script>
+ $(document).ready(function() {
+ $(".clickable-ele").bind("click", function() {
+ $("<h4>Welcome to Jamal Mohamed 
+College</h4>").appendTo(".res");
+ });
+ $(".clickable-ele1").bind("dblclick", function() {
+ $("<h4>Thank you</h4>").appendTo(".res");
+ });
+ });
+ </script>
+</head>
+<body>
+ <div class="clickable-ele">Single Click</div> 
+ <div class="clickable-ele1">Double Click</div>
+<div class="res">Results will appear here</div> 
+</body>
+</html>
