@@ -1,0 +1,39 @@
+CONVERT.PHP
+<?php if($_SERVER["REQUEST_METHOD"]==="POST") 
+{ 
+$name=$_POST["name"]; 
+$age=$_POST["age"]; 
+$city=$_POST["city"]; 
+$person=new stdClass(); 
+$person->name=$name; 
+$person->age=$age; 
+$person->city=$city; 
+$jsonString=json_encode($person);
+if($jsonString!==false) 
+{ 
+echo"<h1>JSON Result:</h1>";
+echo"<pre>$jsonString</pre>"; 
+}else { 
+echo"JSON encoding failed"; 
+} 
+} 
+?>
+CONVERT.HTML
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>PHP Object to JSON Converter</title>
+ </head>
+ <body>
+ <h1>Convert PHP Object to JSON</h1>
+ <form action="convert.php" method="post">
+ <label for="name">Name:</label>
+ <input type="text" name="name" id="name" required /> <br />
+ <label for="age">Age:</label>
+ <input type="number" name="age" id="age" required /> <br />
+ <label for="city">City:</label>
+ <input type="text" name="city" id="city" required /> <br />
+ <input type="submit" value="Convert to JSON" />
+ </form>
+ </body>
+</html>
