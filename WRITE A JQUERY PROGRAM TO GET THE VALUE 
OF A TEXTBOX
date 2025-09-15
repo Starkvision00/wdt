@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Get Text Box Value</title>
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+ integrity="sha256-
+/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+ crossorigin="anonymous">
+ </script>
+</head>
+<body>
+ <label for="myTextBox1">Enter Your Name:</label>
+ <input type="text" id="myTextBox1"/><br>
+ 
+ <label for="myTextBox2">Enter Your RollNo:</label>
+ <input type="text" id="myTextBox2"/><br>
+ 
+ <button id="getvaluebutton">Get value</button>
+ 
+ <script>
+ $(document).ready(function(){
+$("#getvaluebutton").click(function(){
+ var name = $("#myTextBox1").val();
+ var RollNo = $("#myTextBox2").val();
+ alert("Student Name: " + name);
+ alert("Student RollNo: " + RollNo);
+ });
+ });
+ </script>
+</body>
+</html>
