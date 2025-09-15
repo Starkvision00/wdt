@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Session Information</title>
+</head>
+<body>
+ <h1>Session Information</h1>
+ <?php
+ session_start(); 
+ $_SESSION['ID'] = session_id();
+ if (!isset($_SESSION['CREATION_TIME'])) {
+ $_SESSION['CREATION_TIME'] = time();
+ }
+ $_SESSION['LAST_ACCESS_TIME'] = time();
+ ?>
+ <p><strong>SESSION ID:</strong></p>
+ <?php
+ echo $_SESSION['ID'];
+?>
+ <p><strong>SESSION CREATION TIME:</strong></p>
+ <?php
+ echo date('Y-m-d H:i:s', $_SESSION['CREATION_TIME']);
+ ?>
+ <p><strong>SESSION LAST ACCESS TIME:</strong></p>
+ <?php
+ echo date('Y-m-d H:i:s', $_SESSION['LAST_ACCESS_TIME']);
+ ?>
+</body>
+</html>
